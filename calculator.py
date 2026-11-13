@@ -1,8 +1,8 @@
-
 # https://github.com/AadeshT/lab11-AT-ZZ.git
 # Partner 1: Aadesh
 # Partner 2: Zelun
-import math
+
+
 
 """
 calculator.py
@@ -46,3 +46,13 @@ def div(a, b):
 
 def exp(a, b):
     return a ** b
+
+def square_root(a):
+    if a < 0:
+        raise ValueError("Cannot calculate square root of negative number")
+    return math.sqrt(a)
+
+
+def hypotenuse(a, b):
+    return math.hypot(a, b)
+
