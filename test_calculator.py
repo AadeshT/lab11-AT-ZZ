@@ -39,7 +39,7 @@ class TestCalculator(unittest.TestCase):
     
     ######## Partner 1
     def test_log_invalid_argument(self):  # 1 assertion
-        self.assertRaises(ValueError, log, 0, 5)
+        self.assertRaises(ValueError, calculator.log, 0, 5)
 
     def test_hypotenuse(self):  # 3 assertions
         self.assertEqual(math.hypot(3, 4), 5)
