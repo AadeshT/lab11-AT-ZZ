@@ -1,6 +1,6 @@
 import unittest
-import math
 import calculator
+import math
 
 class TestCalculator(unittest.TestCase):
     ######### Partner 2
@@ -12,19 +12,15 @@ class TestCalculator(unittest.TestCase):
     # ##########################
 
     ######## Partner 1
-    def test_multiply(self):# 3 assertions
-        self.assertEqual(calculator.mul(3,4), 12)
-        self.assertEqual(calculator.mul(6,4), 24)
-        self.assertEqual(calculator.mul(5,6), 30)
+    def test_multiply(self):
+        self.assertEqual(calculator.mul(3, 4), 12)
+        self.assertEqual(calculator.mul(-3, 4), -12)
+        self.assertEqual(calculator.mul(0, 5), 0)
 
-
-
-    def test_divide(self):# 3 assertions
-        self.assertEqual(calculator.div(2,10), 5)
-        self.assertEqual(calculator.div(2,12), 6)
-        self.assertEqual(calculator.div(2,14), 7)
-    #     fill in code
-    # ##########################
+    def test_divide(self):
+        self.assertEqual(calculator.div(2, 10), 5)
+        self.assertEqual(calculator.div(-2, 10), -5)
+        self.assertRaises(ZeroDivisionError, calculator.div, 0, 5)
 
     ######## Partner 2
     # def test_divide_by_zero(self): # 1 assertion
@@ -42,26 +38,18 @@ class TestCalculator(unittest.TestCase):
     # ##########################
     
     ######## Partner 1
-    def test_log_invalid_argument(self): # 1 assertion
-        self.assertRaises(ValueError, calculator.logarithm,0,5)
-    #     # call log function inside, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #     logarithm(0, 5)
-    #     fill in code
+    def test_log_invalid_argument(self):  # 1 assertion
+        self.assertRaises(ValueError, log, 0, 5)
 
-    def test_hypotenuse(self): # 3 assertions
+    def test_hypotenuse(self):  # 3 assertions
         self.assertEqual(math.hypot(3, 4), 5)
         self.assertEqual(math.hypot(-3, 4), 5)
         self.assertEqual(math.hypot(0, 5), 5)
 
-    #     fill in code
-
-    def test_sqrt(self): # 3 assertions
+    def test_sqrt(self):  # 3 assertions
         self.assertEqual(math.sqrt(9), 3)
         self.assertEqual(math.sqrt(0), 0)
         self.assertRaises(ValueError, math.sqrt, -9)
-
-
 
 # Do not touch this
 if __name__ == "__main__":
